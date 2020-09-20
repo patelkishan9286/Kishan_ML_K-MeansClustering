@@ -37,10 +37,10 @@ Also talking about clustering, there are mainly three different types of cluster
   * In Hierarchical Clustering, the aim is to produce a hierarchical series of nested clusters.
   * A diagram called Dendrogram graphically represents this hierarchy and is an inverted tree that describes the order in which factors are merged (bottom-up view) or cluster are break up (top-down view).
   
-  <p align="center">
+<p align="center">
   <img src="https://github.com/patelkishan9286/Kishan_ML_K-MeansClustering/blob/master/HC.PNG">
-   </p>
-___
+</p>
+<hr>
 So now back to **K-Means Clustering**, it **is an unsupervised learning algorithm**.
 From the above explanation, you must have understand that in clustering, we do not have a target to predict. We look at the data and then try to club similar observations and form different groups. Hence it is an unsupervised learning problem in which we do not have any fixed target/dependent variable, we only have the independent variables.
 
@@ -48,13 +48,54 @@ The **K** in the k-means stands for **the number of clusters required**.
 K-means is a centroid-based algorithm, or a distance-based algorithm, where we calculate the distances to assign a point to a cluster. In K-Means, each cluster is associated with a centroid.
 The main objective of the K-Means algorithm is to minimize the sum of distances between the points and their respective cluster centroid.
 
-So to apply K-Means alogrithm, follow the below given steps:
+Following are the steps for applying K-Means algorithm and let us understand with the help of an example.
+
 ### Step 1 - Select the total number of clusters to be identified.
-  * Select the number of cluster needed for the grouping of data.
-  * There is a method called the elbow method to efficiently select the value of k.
+
+<p align="center">
+  <img src="https://github.com/patelkishan9286/Kishan_ML_K-MeansClustering/blob/master/s1.PNG">
+</p>
+
+* Let us consider the above data.
+* By looking at the figure, we can say that taking three clusters would be suitable for this data.
+
 ### Step 2 - Randomly select k distinct points.
-  
-### Step 3 - Measure the distance between 1st point and selcted k clusters.
+
+<p align="center">
+  <img src="https://github.com/patelkishan9286/Kishan_ML_K-MeansClustering/blob/master/s2.PNG">
+</p>
+
+* Now we will randomly select k different points in the data.
+* In our case, since k=3, we will select 3 different points randomly.
+* And these points will be the clusters itself.
+
+### Step 3 - Start measuring the distance between the point and selcted k clusters.
+<p align="center">
+  <img src="https://github.com/patelkishan9286/Kishan_ML_K-MeansClustering/blob/master/s3.PNG">
+</p>
+
+* So now we will measure the distance between each point and the cluster centroid.
+* Initially, since there is only one point, the point itself will be the cluster centroid.
+
 ### Step 4 - Assign 1st point to the nearest cluster.
+<p align="center">
+  <img src="https://github.com/patelkishan9286/Kishan_ML_K-MeansClustering/blob/master/s4.PNG">
+</p>
+
+* As we can see, the first point is closest to the red cluster, so it will be assigned to it.
+
 ### Step 5- Calculate the mean including the new point for the cluster.
+<p align="center">
+  <img src="https://github.com/patelkishan9286/Kishan_ML_K-MeansClustering/blob/master/s5.PNG">
+</p>
+
+* Now there are two points and so the centroid value will be changed.
+* So, we will find the centroid value by simply just taking the mean of the data.
+* As you can see above, the line in the centre is the new centroid now, and for the next point we will use this to calcute the required distance.
+
 ### Step 6 - Continue the same procedure for all the points but use the new mean of the cluster to measure the distance from the point.
+<p align="center">
+  <img src="https://github.com/patelkishan9286/Kishan_ML_K-MeansClustering/blob/master/s6.PNG">
+</p>
+
+* After completion of all the points, we will get a figure like this one above.
