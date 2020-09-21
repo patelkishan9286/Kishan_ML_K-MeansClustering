@@ -3,8 +3,8 @@ To understand K-Means Clutering, let us first understand a few basic concepts ab
 
 So first, lets start with
 ## What is Clustering?
-* To state it directly, **clustering is the process of dividing the items/dataset into groups, consisting of similar data-points.
-* And these groups are called clusters**.
+* To state it directly, **clustering is the process of dividing the items/dataset into groups, consisting of similar data-points**.
+* And these groups are **called clusters**.
 * The points in the same cluster are as similar as possible while the points in diffent clusters are as dissimilar as possible.
 
 Let me explain by giving an example.
@@ -163,22 +163,27 @@ Now, let me explai some few  questions.
 There are mainly three stopping criteria for the K-means algorithm:
 
 **1. Centroids of newly formed clusters do not change.**
- * We can stop the algorithm if the centroids of newly formed clusters are not changing. Even after multiple iterations, if we are getting the same centroids for all the clusters, we can say that the algorithm is not learning any new pattern and it is a sign to stop the training.
+ * We can stop the algorithm if the centroids of newly formed clusters are not changing.
+ * Even after multiple iterations, if we are getting the same centroids for all the clusters, we can say that the algorithm is not learning any new pattern and it is a sign to stop the training.
  
 **2. Points remain in the same cluster**
  * Another clear sign that we should stop the training process if the points remain in the same cluster even after training the algorithm for multiple iterations.
  
 **3. Maximum number of iterations are reached**
- * Finally, we can stop the training if the maximum number of iterations is reached. Suppose if we have set the number of iterations as 100. The process will repeat for 100 iterations before stopping.
+ * Finally, we can stop the training if the maximum number of iterations is reached.
+ * Suppose if we have set the number of iterations as 50. The process will repeat for 50 iterations before stopping.
  
  ### How to choose the optimum value of k?
+ 
  * Sometimes, the value of k can be obviously seen by visualization of the data.
  * But sometimes it is not that easy to jugde or guess the number of cluster manually.
+ 
  * Well, one of the option to decide the value of k is the hit-and-trial method where you just try different values of k.
  * Also, note that k=1 is the worst case scenario as it has the highest variation.
  * And as you keep on increasing and trying different values of k, you will notice that each time you increase the cluster, the variation decreases.
  * And if number of cluster is equal to number of data points, then the total variation will be zero.
  * So we can say that the number of clusters is indirectly propotional to total variation.
+ 
  * Finally, when we plot the reduction in variance for per value of k, we will get a graph like below where on the X-axis we have the number of cluster-k, and on the Y-axis we have reduction in variance.
  
 <p align="center">
