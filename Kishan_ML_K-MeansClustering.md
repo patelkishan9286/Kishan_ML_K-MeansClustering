@@ -94,7 +94,7 @@ Following are the steps for applying K-Means algorithm and let us understand wit
 
 * Now there are two points and so the centroid value will be changed.
 * So, we will find the centroid value by simply just taking the mean of the data.
-* As you can see above, the line in the centre is the new centroid now, and for the next point we will use this to calcute the required distance.
+* As you can see above, the red line in the centre is the new centroid now, and for the next point we will use this to calcute the required distance.
 
 ### Step 6: Continue the same procedure for all the data points.
 <p align="center">
@@ -156,15 +156,34 @@ Now, let me explai some few  questions.
   
 There are mainly three stopping criteria for the K-means algorithm:
 
-1. Centroids of newly formed clusters do not change.
+**1. Centroids of newly formed clusters do not change.**
  * We can stop the algorithm if the centroids of newly formed clusters are not changing. Even after multiple iterations, if we are getting the same centroids for all the clusters, we can say that the algorithm is not learning any new pattern and it is a sign to stop the training.
-2. Points remain in the same cluster
+ 
+**2. Points remain in the same cluster**
  * Another clear sign that we should stop the training process if the points remain in the same cluster even after training the algorithm for multiple iterations.
-3. Maximum number of iterations are reached
+ 
+**3. Maximum number of iterations are reached**
  * Finally, we can stop the training if the maximum number of iterations is reached. Suppose if we have set the number of iterations as 100. The process will repeat for 100 iterations before stopping.
  
  ### How to choose the optimum value of k?
- Sometimes, the value of k can be obviously seen by visualization of the data
+ * Sometimes, the value of k can be obviously seen by visualization of the data.
+ * But sometimes it is not that easy to jugde or guess the number of cluster manually.
+ * Well, one of the option to decide the value of k is the hit-and-trial method where you just try different values of k.
+ * Also, note that k=1 is the worst case scenario as it has the highest variation.
+ * And as you keep on increasing and trying different values of k, you will notice that each time you increase the cluster, the variation decreases.
+ * And if number of cluster is equal to number of data points, then the total variation will be zero.
+ * So we can say that the number of clusters is indirectly propotional to total variation.
+ * Finally, when we plot the reduction in variance for per value of k, we will get a graph like below where on the X-axis we have the number of cluster-k, and on the Y-axis we have reduction in variance.
+ 
+<p align="center">
+  <img src="https://github.com/patelkishan9286/Kishan_ML_K-MeansClustering/blob/master/s16.PNG">
+</p>
+
+* On the graph, you can see that there is a huge reduction in variance with k=3, but after that there is no such steep change in the variation.
+* This point of change is known as the elbow point and the value of thi point is the one which decides the value of k.
+* So in order to find the optimum value of k, we need to find the elbow point from the elbow plot.
 
 
+So thats it, now you've got a basic understanding of the working of the k-means clustering algorithm.
 
+Now lets move on to the coding part where we will implement it.
